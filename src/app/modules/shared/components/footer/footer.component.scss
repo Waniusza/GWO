@@ -1,7 +1,9 @@
+@import "src/assets/styles/_colors.scss";
+
 .footer {
   padding: 24px;
   gap: 12px;
   min-height: 400px;
-  background-color: gray;
-  color: white;
+  background-color: $color_footer_bg;
+  color: $color_footer_font;
 }
