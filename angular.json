@@ -99,9 +99,21 @@
           "options": {
             "browserTarget": "GWO-test:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "GWO-test"
+  "defaultProject": "GWO-test",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
