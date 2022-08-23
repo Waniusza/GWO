@@ -1,0 +1,17 @@
+@import "src/assets/styles/colors";
+
+.continent-card {
+  font-size: 26px;
+  border: solid 2px $color_grey_border;
+  border-radius: 20px;
+  min-width: 300px;
+  min-height: 200px;
+  box-shadow: 0px 6px 10px -10px $color_grey_border;
+  transition: font-size 0.75s, box-shadow 0.75s, background-color 0.75s;
+
+  &:hover {
+    box-shadow: 0px 10px 30px -12px $color_grey_border;
+    font-size: 28px;
+    background-color: $color_grey_focus;
+  }
+}

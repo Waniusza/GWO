@@ -7,3 +7,11 @@
 // @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
 @import "./assets/styles/index";
+
+body {
+  min-height: 100%;
+
+  [ng-reflect-router-link] {
+    cursor: pointer;
+  }
+}

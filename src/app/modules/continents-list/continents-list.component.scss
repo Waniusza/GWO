@@ -1,0 +1,7 @@
+.continents-list {
+  &__elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,41 @@
+@mixin scrollable($thumbColor: rgba(0, 0, 0, 0.5), $height: 7px) {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: $height;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+    border-radius: 10px;
+    border: none;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: transparent;
+  }
+  scrollbar-color: $thumbColor;
+  scrollbar-width: thin;
+}
+
+@mixin scrollable-y($width: 8px, $thumbColor: rgba(0, 0, 0, 0.5)) {
+  @include scrollable($thumbColor);
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: 2px;
+
+  &::-webkit-scrollbar:vertical {
+    width: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+  }
+}
+@mixin scrollable-x($width: 4px, $thumbColor: rgba(0, 0, 0, 0.5)) {
+  @include scrollable($thumbColor);
+  overflow-y: hidden;
+  overflow-x: auto;
+  margin-bottom: 2px;
+
+  &::-webkit-scrollbar:horizontal {
+    height: $width;
+  }
+}

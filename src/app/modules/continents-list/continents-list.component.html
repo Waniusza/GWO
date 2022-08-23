@@ -1,7 +1,10 @@
-<div>
-  continents-list works!
-
-  <div *ngFor="let continent of continentsList | async">
-    {{ continent }}
+<div class="continents-list">
+  <h2 class="section-title">Wybierz region</h2>
+  <div class="continents-list__elements row g-4">
+    <app-continent-card
+      *ngFor="let continent of continentsList | async"
+      [continent]="continent"
+      class="col col-12 col-md-6 col-lg-4"
+    ></app-continent-card>
   </div>
 </div>

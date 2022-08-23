@@ -1,0 +1,8 @@
+.section-title {
+  font-size: 32px;
+  padding: 16px 0 32px;
+
+  @include media-breakpoint-up(md) {
+    text-align: center;
+  }
+}

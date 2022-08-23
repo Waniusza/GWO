@@ -6,10 +6,11 @@ import { NavComponent } from './components/nav/nav.component';
 import { ApiService } from './services/api.service';
 import { ApiCacheService } from './services/api-cache.service copy';
 import { NotificationService } from './services/notification.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [FooterComponent, NavComponent],
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   exports: [FooterComponent, NavComponent],
   providers: [ApiService, ApiCacheService, NotificationService],
 })
