@@ -7,11 +7,23 @@ import { ApiService } from './services/api.service';
 import { ApiCacheService } from './services/api-cache.service copy';
 import { NotificationService } from './services/notification.service';
 import { RouterModule } from '@angular/router';
+import { CountryFlagComponent } from './components/country-flag/country-flag.component';
+import { CountryNamePipe } from './pipes/country-name.pipe';
 
 @NgModule({
-  declarations: [FooterComponent, NavComponent],
+  declarations: [
+    FooterComponent,
+    NavComponent,
+    CountryFlagComponent,
+    CountryNamePipe,
+  ],
   imports: [CommonModule, HttpClientModule, RouterModule],
-  exports: [FooterComponent, NavComponent],
+  exports: [
+    FooterComponent,
+    NavComponent,
+    CountryFlagComponent,
+    CountryNamePipe,
+  ],
   providers: [ApiService, ApiCacheService, NotificationService],
 })
 export class SharedModule {}

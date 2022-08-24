@@ -1,1 +1,48 @@
-<p>country-details works!</p>
+<div class="country-details">
+  <h2 class="section-title">
+    {{ countryDetailsService.countryDetails | async | countryName }}
+  </h2>
+
+  <div
+    class="content p-5"
+    *ngIf="countryDetailsService.countryDetails | async as country"
+  >
+    <div class="d-flex justify-content-between">
+      <app-country-flag
+        [country]="country"
+        class="country-details__flag"
+      ></app-country-flag>
+      <div class="country-details__name">{{ country.cca3 }}</div>
+    </div>
+    <div class="mt-5">
+      <table class="country-details__table">
+        <tr *ngIf="country.capital?.length">
+          <td class="country-details__table__property-name">Stolica:</td>
+          <td class="country-details__table__property-value">
+            {{ country.capital[0] }}
+          </td>
+        </tr>
+        <tr *ngIf="country.population">
+          <td class="country-details__table__property-name">Populacja:</td>
+          <td class="country-details__table__property-value">
+            {{ country.population | number: "1.0-0":"pl-PL" }}
+          </td>
+        </tr>
+        <tr *ngIf="country.population">
+          <td class="country-details__table__property-name">Waluta:</td>
+          <td class="country-details__table__property-value">
+            <span
+              *ngFor="
+                let currency of country.currencies | keyvalue;
+                last as last
+              "
+            >
+              {{ currency.key }}
+              <span *ngIf="!last">,</span>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<img
+  *ngIf="country"
+  [src]="country.flags?.svg || country.flags?.png"
+  alt="Flag of {{ country.name }}"
+  class="country-flag"
+/>

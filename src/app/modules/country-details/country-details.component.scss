@@ -1,0 +1,23 @@
+@import "src/assets/styles/colors";
+
+.country-details {
+  &__flag {
+    width: 180px;
+    box-shadow: 0 0 10px $color_footer_bg;
+  }
+  &__name {
+    font-size: 60px;
+    color: $color_font_secondary;
+  }
+
+  &__table {
+    width: 100%;
+    tr {
+      border-bottom: 1px solid $color_grey_border;
+    }
+    &__property-name {
+      width: 160px;
+      font-weight: 500;
+    }
+  }
+}

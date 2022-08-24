@@ -3,18 +3,17 @@
     Region: {{ continentsListService.selectedRegion }}
   </h2>
 
-  <div class="countries-list__list">
-    <div
+  <div class="content">
+    <a
       *ngFor="let country of continentsListService.countriesList | async"
-      [routerLink]="'/country/' + country.name"
+      [routerLink]="'/country/' + country.name.official"
       class="countries-list__element d-flex"
     >
-      <img
-        [src]="country.flag"
-        alt="Flag of {{ country.name }}"
+      <app-country-flag
         class="countries-list__flag me-3"
-      />
-      {{ country.name }}
-    </div>
+        [country]="country"
+      ></app-country-flag>
+      {{ country | countryName }}
+    </a>
   </div>
 </div>

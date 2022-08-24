@@ -8,24 +8,15 @@ import { CountriesListService } from './countries-list.service';
   templateUrl: './countries-list.component.html',
   styleUrls: ['./countries-list.component.scss'],
 })
-export class CountriesListComponent implements OnInit, OnDestroy {
+export class CountriesListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public continentsListService: CountriesListService
   ) {}
 
-  private paramsSubscribtion?: Subscription;
-
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      console.log('CountriesListComponent::ngOnInit', {
-        params,
-      });
-      this.continentsListService.fetchData(params['continent']);
-    });
-  }
-
-  ngOnDestroy(): void {
-    if (this.paramsSubscribtion) this.paramsSubscribtion.unsubscribe();
+    this.continentsListService.fetchData(
+      this.route.snapshot.params['continent']
+    );
   }
 }

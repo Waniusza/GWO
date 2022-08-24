@@ -10,12 +10,12 @@ const routes: Routes = [
     component: ContinentsListComponent,
   },
   {
-    path: 'country/:country',
-    component: CountryDetailsComponent,
-  },
-  {
     path: ':continent',
     component: CountriesListComponent,
+  },
+  {
+    path: 'country/:country',
+    component: CountryDetailsComponent,
   },
 ];
 
